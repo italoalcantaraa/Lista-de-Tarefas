@@ -1,0 +1,93 @@
+.App {
+    height: 100vh;
+    background-color: #F5F6FA;
+}
+
+.content{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 5em;
+    align-items: center;
+    width: 40%;
+    min-width: 496px;
+    color: #797979;
+}
+
+.title_search {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 330px;
+    width: 100%;
+}
+
+#title{
+    font-size: 30px;
+}
+
+.input_add{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 3px 3px 3px 20px;
+    border-radius: 10px;
+    border: 2px solid #DFDFDF;
+}
+
+.input_add input{
+    font-size: 18px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.input_add button{
+    font-size: 25px;
+    color: white;
+    border: none;
+    padding: 0px 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #0084FF;
+    cursor: pointer;
+}
+
+.list{
+    width: 100%;
+}
+
+li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #DDDDDD;
+    padding-top: 4px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons div{
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.buttons div img{
+    width: 25px;
+}
+
+.buttons div:nth-child(1) {
+    background-color: #02D78D;
+}
+.buttons div:nth-child(2) {
+    background-color: #EB9641;
+}
