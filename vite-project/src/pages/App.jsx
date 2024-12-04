@@ -3,26 +3,28 @@ import checkedImg from '../assets/images/checked.svg';
 import x from '../assets/images/x.svg';
 
 import { useState } from 'react';
-import { styled } from 'styled-components';
 
 import Header from '../components/header';
 
 
 function App() {
   const [activity, setActivity] = useState('');
-  const [list, setList] = useState([{name: '', finished: false}]);
+  const [list, setList] = useState([{ name: '', finished: false }]);
 
   const add = () => {
-    let newList = [...list, {name: activity, finished: false}];
+    let newList = [...list, { name: activity, finished: false }];
     setList(newList);
 
     setActivity('');
     newList = [];
   }
 
-  const checked = (item) => {
-      
-  } 
+  const checked = (index) => {
+    let newList = [...list];
+    newList[index].finished = true;
+
+    setList(newList);
+  }
 
   const exclude = (index) => {
     let newList = [...list];
@@ -41,7 +43,8 @@ function App() {
           <div className='input_add'>
             <input type="text" placeholder='O que vai fazer...'
               value={activity}
-              onChange={(e) => setActivity(e.target.value)} />
+              onChange={(e) => setActivity(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' ? add() : null} />
             <button onClick={() => add()}>+</button>
           </div>
         </div>
@@ -50,18 +53,18 @@ function App() {
           <ul>
             {list.map((item, index) =>
               item.name != '' ?
-              <li key={index}>
-                <p>{item.name}</p>
-                <div className='buttons'>
-                  <div onClick={() => checked(index)}>
-                    <img src={checkedImg} alt="checked" />
+                <li key={index}>
+                  <p style={item.finished ? { textDecoration: 'line-through' } : null} >{item.name}</p>
+                  <div className='buttons'>
+                    <div onClick={() => checked(index)}  >
+                      <img src={checkedImg} alt="checked" />
+                    </div>
+                    <div onClick={() => exclude(index)}>
+                      <img src={x} alt="x" />
+                    </div>
                   </div>
-                  <div onClick={() => exclude(index)}>
-                    <img src={x} alt="x" />
-                  </div>
-                </div>
-              </li>
-              : null
+                </li>
+                : null
             )}
           </ul>
         </div>
