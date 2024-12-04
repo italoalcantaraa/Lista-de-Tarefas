@@ -6,7 +6,7 @@
 
 ## Funcionaliodades
 
-  - Adicionar items na lista.
-  - Remover items da lista.
+  - Adicionar itens na lista.
+  - Remover itens da lista.
   - Marcar atividade como concluída.
 
