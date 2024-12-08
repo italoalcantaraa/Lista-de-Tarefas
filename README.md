@@ -1,4 +1,4 @@
-﻿# | Lista-de-Tarefas
+﻿# | Lista-de-Tarefas ✅
  
 ## Sobre o projeto
 
